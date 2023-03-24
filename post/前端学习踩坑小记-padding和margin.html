@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="最近发现产品有个小问题，有序列表和无序列表的序列号展示不全：   第一反应是设置了margin-left，发现没解决，然后我去问了chatGPT，它给出的答案是设置padding-left。 又让它解释了区别：  padding-left属性是用来设置元素的内边距（padding）的左边距，它可以用来控制元素内容与元素边框之间的距离。 margin-left属性是用来设置元素的外边距（margin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端学习踩坑小记-padding和margin">
+<meta property="og:url" content="https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html">
+<meta property="og:site_name" content="自律小盾宇 × Blog">
+<meta property="og:description" content="最近发现产品有个小问题，有序列表和无序列表的序列号展示不全：   第一反应是设置了margin-left，发现没解决，然后我去问了chatGPT，它给出的答案是设置padding-left。 又让它解释了区别：  padding-left属性是用来设置元素的内边距（padding）的左边距，它可以用来控制元素内容与元素边框之间的距离。 margin-left属性是用来设置元素的外边距（margin">
+<meta property="og:locale">
+<meta property="og:image" content="https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin/WeChate95435fafc2db9e10d751ccaee828f31.png">
+<meta property="og:image" content="https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin/margin-padding.png">
+<meta property="article:published_time" content="2023-03-24T13:41:00.000Z">
+<meta property="article:modified_time" content="2023-03-24T13:49:02.764Z">
+<meta property="article:author" content="自律小盾宇">
+<meta property="article:tag" content="产品开发日记">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin/WeChate95435fafc2db9e10d751ccaee828f31.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>前端学习踩坑小记-padding和margin</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <script>localStorage.getItem("dark_mode")==="dark"&&document.write(`<link rel="stylesheet" href="${location.origin}/css/dark.css">`)</script>
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+    <meta name="google-site-verification" content="DwDg4EuywHWNZUkTC7sG0WGv_UQekM4uRtOoaGuDJHc" />
+    
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="自律小盾宇 × Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="自律小盾宇 × Blog" type="application/rss+xml">
+</head>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about">About</a></li><!--
+     --><!--
+       --><li><a href="/archives">Writing</a></li><!--
+     --><!--
+       --><li><a href="/weekly">Weekly</a></li><!--
+     --><!--
+       --><li><a href="/tags">Tags</a></li><!--
+     --><!--
+       --><li><a href="/search">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/post/text1.html"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon"><i class="fa fa-moon" id="dark-btn" aria-hidden="true" onmouseover="$('#i-dark').toggle()" onmouseout="$('#i-dark').toggle()"></i></a></li>
+        <li><a class="icon" target="_blank" rel="noopener" href="https://dunyusong.github.io/atom.xml" aria-label="rss"><i class="fas fa-rss"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-dark" class="info" style="display: none;">Switch mode</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&text=前端学习踩坑小记-padding和margin"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&is_video=false&description=前端学习踩坑小记-padding和margin"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=前端学习踩坑小记-padding和margin&body=Check out this article: https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&name=前端学习踩坑小记-padding和margin&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&t=前端学习踩坑小记-padding和margin"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        前端学习踩坑小记-padding和margin
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span itemprop="name"
+          >自律小盾宇</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-03-24T13:41:00.000Z" itemprop="datePublished">2023-03-24</time>
+        
+      
+    </div>
+
+ 
+      
+        
+ 
+        
+    <div class="article-tag">
+        <i class="fas fa-hashtag"></i>
+        <a class="tag-link-link" href="/tags/CSS/" rel="tag">CSS</a>, <a class="tag-link-link" href="/tags/%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/" rel="tag">产品开发日记</a>
+    </div>
+
+
+      
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody"><p>最近发现产品有个小问题，有序列表和无序列表的序列号展示不全：</p>
+<img src="/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin/WeChate95435fafc2db9e10d751ccaee828f31.png" class alt="问题">
+
+<p>第一反应是设置了margin-left，发现没解决，然后我去问了chatGPT，它给出的答案是设置padding-left。</p>
+<p>又让它解释了区别：</p>
+<ul>
+<li>padding-left属性是用来设置元素的内边距（padding）的左边距，它可以用来控制元素内容与元素边框之间的距离。</li>
+<li>margin-left属性是用来设置元素的外边距（margin）的左边距，它可以用来控制元素与其他元素之间的距离。</li>
+</ul>
+<p>用一张图来更直观的说明区别：</p>
+<img src="/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin/margin-padding.png" class alt="问题">
+</div>
+  <hr class="copy-line" />
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>作者 :</span>
+      <span
+        >自律小盾宇</span
+      >
+    </div>
+    <div class="copy-url">
+      <span>地址 :</span>
+      <a href="https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html">https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html</a>
+    </div>
+    <div class="copy-origin">
+      <span>来源 :</span>
+      <a href="https://dunyusong.github.io">https://dunyusong.github.io</a>
+    </div>
+    <div class="copy-license">著作权归作者所有，转载请联系作者获得授权。</div>
+  </div>
+</article>
+
+<div class="blog-post-comments">
+  <div id="load-disqus">
+    <p onclick="loadDisqus()" style="cursor: pointer; text-align: center">
+      🥳&nbsp;加载 Disqus 评论
+    </p>
+  </div>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+  </div>
+</div>
+ 
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="/archives">Writing</a></li>
+         
+          <li><a href="/weekly">Weekly</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/search">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&text=前端学习踩坑小记-padding和margin"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&is_video=false&description=前端学习踩坑小记-padding和margin"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=前端学习踩坑小记-padding和margin&body=Check out this article: https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&title=前端学习踩坑小记-padding和margin"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&name=前端学习踩坑小记-padding和margin&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html&t=前端学习踩坑小记-padding和margin"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="dark-mobile" class="icon"><i class="fa fa-sun" id="dark-btn" aria-hidden="true"></i> Switch</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    自律小盾宇
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about">About</a></li><!--
+     --><!--
+       --><li><a href="/archives">Writing</a></li><!--
+     --><!--
+       --><li><a href="/weekly">Weekly</a></li><!--
+     --><!--
+       --><li><a href="/tags">Tags</a></li><!--
+     --><!--
+       --><li><a href="/search">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-190615898-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-190615898-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+  function loadDisqus() {
+    var disqus_shortname = 'dunyu'
+
+    ;(function () {
+      var dsq = document.createElement('script')
+      dsq.type = 'text/javascript'
+      dsq.async = true
+      dsq.src =
+        '//' +
+        disqus_shortname +
+        '.disqus.com/embed.js'
+      ;(
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(dsq)
+    })()
+
+    $('#load-disqus').hide()
+  }
+</script>
+
+<!-- utterances Comments -->
+
+<!-- FancyBox -->
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+</body>
+</html>

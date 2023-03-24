@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>自律小盾宇 × Blog</title>
+  
+  
+  <link href="https://dunyusong.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://dunyusong.github.io/"/>
+  <updated>2023-03-24T13:49:02.764Z</updated>
+  <id>https://dunyusong.github.io/</id>
+  
+  <author>
+    <name>自律小盾宇</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端学习踩坑小记-padding和margin</title>
+    <link href="https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html"/>
+    <id>https://dunyusong.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html</id>
+    <published>2023-03-24T13:41:00.000Z</published>
+    <updated>2023-03-24T13:49:02.764Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近发现产品有个小问题，有序列表和无序列表的序列号展示不全：</p><img src="/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin/WeChate95435fafc2db9e10d751ccaee828f31.png" class alt="问题"><p>第一反应是设置了margin-left，发现没解决，然后我去问了chatGPT，它给出的答案是设置padding-left。</p><p>又让它解释了区别：</p><ul><li>padding-left属性是用来设置元素的内边距（padding）的左边距，它可以用来控制元素内容与元素边框之间的距离。</li><li>margin-left属性是用来设置元素的外边距（margin）的左边距，它可以用来控制元素与其他元素之间的距离。</li></ul><p>用一张图来更直观的说明区别：</p><img src="/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin/margin-padding.png" class alt="问题">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;最近发现产品有个小问题，有序列表和无序列表的序列号展示不全：&lt;/p&gt;
+&lt;img src=&quot;/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92</summary>
+      
+    
+    
+    
+    
+    <category term="产品开发日记" scheme="https://dunyusong.github.io/tags/%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/"/>
+    
+    <category term="CSS" scheme="https://dunyusong.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>text1</title>
+    <link href="https://dunyusong.github.io/post/text1.html"/>
+    <id>https://dunyusong.github.io/post/text1.html</id>
+    <published>2023-03-15T01:53:12.000Z</published>
+    <updated>2023-03-24T13:49:02.785Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>

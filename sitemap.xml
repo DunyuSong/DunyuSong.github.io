@@ -29,6 +29,15 @@
   </url>
   
   <url>
+    <loc>https://dunyusong.github.io/links.html</loc>
+    
+    <lastmod>2023-03-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://dunyusong.github.io/search.html</loc>
     
     <lastmod>2023-03-13</lastmod>
@@ -39,15 +48,6 @@
   
   <url>
     <loc>https://dunyusong.github.io/tags.html</loc>
-    
-    <lastmod>2023-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://dunyusong.github.io/links.html</loc>
     
     <lastmod>2023-03-13</lastmod>
     
@@ -83,20 +83,6 @@
 
   
   <url>
-    <loc>https://dunyusong.github.io/tags/js/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://dunyusong.github.io/tags/DOM/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://dunyusong.github.io/tags/%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -105,6 +91,20 @@
   
   <url>
     <loc>https://dunyusong.github.io/tags/CSS/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://dunyusong.github.io/tags/js/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://dunyusong.github.io/tags/DOM/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

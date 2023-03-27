@@ -8,7 +8,7 @@
       <link href="/post/node-children%E5%92%8Cnode-childrenNodes%E7%9A%84%E5%8C%BA%E5%88%AB.html"/>
       <url>/post/node-children%E5%92%8Cnode-childrenNodes%E7%9A%84%E5%8C%BA%E5%88%AB.html</url>
       
-        <content type="html"><![CDATA[<p>简单来说，node.children和node.childrenNodes的区别是，node.children是HTMLCollection，不包含文本节点；node.childrenNodes是NodeList，包含文本节点。</p><p>用代码示例来直观的看下区别：</p><img src="/post/node-children%E5%92%8Cnode-childrenNodes%E7%9A%84%E5%8C%BA%E5%88%AB/WeChat8efe7113a95769a75baf0ade5f24ed71.png" class alt="node.children"><p>用node.childrenNodes，不仅包含文本，包括div之间的换行也是包含的</p><img src="/post/node-children%E5%92%8Cnode-childrenNodes%E7%9A%84%E5%8C%BA%E5%88%AB/WeChat251c982fc9ddaa754c429cf06c078777.png" class alt="node.childrenNodes">]]></content>
+        <content type="html"><![CDATA[<p>简单来说，node.children和node.childrenNodes的区别是，node.children是HTMLCollection，不包含文本节点；node.childrenNodes是NodeList，包含文本节点。</p><p>用代码示例来直观的看下区别：</p><img src="/post/node-children%E5%92%8Cnode-childrenNodes%E7%9A%84%E5%8C%BA%E5%88%AB/WeChat8efe7113a95769a75baf0ade5f24ed71.png" class alt="node.children"><p>用node.childrenNodes，不仅包含文本，包括div之间的换行也是包含的</p><img src="/post/node-children%E5%92%8Cnode-childrenNodes%E7%9A%84%E5%8C%BA%E5%88%AB/WeChat251c982fc9ddaa754c429cf06c078777.png" class alt="node.childrenNodes"><p>参考详细学习文章：<a href="https://juejin.cn/post/7085927522885435405">面试官：childNodes 和 children 有什么区别？</a></p>]]></content>
       
       
       

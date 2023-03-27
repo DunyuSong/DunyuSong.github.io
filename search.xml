@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>node.children和node.childrenNodes的区别</title>
+      <link href="/post/node-children%E5%92%8Cnode-childrenNodes%E7%9A%84%E5%8C%BA%E5%88%AB.html"/>
+      <url>/post/node-children%E5%92%8Cnode-childrenNodes%E7%9A%84%E5%8C%BA%E5%88%AB.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端学习踩坑小记-padding和margin</title>
       <link href="/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html"/>
       <url>/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0-padding%E5%92%8Cmargin.html</url>
@@ -19,19 +32,6 @@
             <tag> CSS </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>text1</title>
-      <link href="/post/text1.html"/>
-      <url>/post/text1.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     

@@ -29,15 +29,6 @@
   </url>
   
   <url>
-    <loc>https://dunyusong.github.io/links.html</loc>
-    
-    <lastmod>2023-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://dunyusong.github.io/search.html</loc>
     
     <lastmod>2023-03-13</lastmod>
@@ -48,6 +39,15 @@
   
   <url>
     <loc>https://dunyusong.github.io/tags.html</loc>
+    
+    <lastmod>2023-03-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://dunyusong.github.io/links.html</loc>
     
     <lastmod>2023-03-13</lastmod>
     

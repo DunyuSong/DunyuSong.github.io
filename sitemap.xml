@@ -76,7 +76,7 @@
 
   <url>
     <loc>https://dunyusong.github.io/</loc>
-    <lastmod>2023-04-03</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -84,28 +84,14 @@
   
   <url>
     <loc>https://dunyusong.github.io/tags/%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/</loc>
-    <lastmod>2023-04-03</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://dunyusong.github.io/tags/CSS/</loc>
-    <lastmod>2023-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://dunyusong.github.io/tags/js/</loc>
-    <lastmod>2023-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://dunyusong.github.io/tags/DOM/</loc>
-    <lastmod>2023-04-03</lastmod>
+    <lastmod>2023-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
